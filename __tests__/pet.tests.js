@@ -126,3 +126,22 @@ describe('checkUp', () => {
     });
 });
 
+describe('haveChild', () => {
+    it('creates a new Pet child', () => {
+      const parentPet = new Pet('Fido');
+  
+      parentPet.haveChild('Fiona');
+  
+      expect(parentPet.children[0]).toBeInstanceOf(Pet);
+      expect(parentPet.children[0].name).toBe('Fiona');
+    });
+  
+    it('throws an error if the Child is no longer alive', () => {
+      const parentPet = new Pet('Fido');
+  
+      parentPet.haveChild('Fiona');
+      parentPet.hunger = 15;
+  
+      expect(()=> parentPet.haveChild()).toThrow('Your pet is no longer alive :(')
+    });
+});
