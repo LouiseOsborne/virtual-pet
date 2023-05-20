@@ -24,7 +24,7 @@ const Pet = new Pet('insert your pet name here')
 
 ## Play with your Virtual Pet! 
 
-Enter the following commands to interact with your pet. Use ```javascript pet.checkUp() ``` regularly to make sure your pet is healthy! 
+Enter the following commands to interact with your pet. Use ``` pet.checkUp() ``` regularly to make sure your pet is healthy! 
 
 ```javascript
 pet.growUp()
