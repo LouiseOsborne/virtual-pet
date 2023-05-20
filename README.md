@@ -18,7 +18,7 @@ Open node REPL in your terminal.
 Copy the following code to initialise your pet!
 
 ```javascript
-const Pet = require('../src/pet');
+const Pet = require('./src/pet');
 const Pet = new Pet('insert your pet name here')
 ```
 
