@@ -2,6 +2,7 @@
 # Virtual Pet
 
 Virtual Pet is a JavaScript project for the Command Shift Software Engineer Bootcamp. 
+
 This project creates a Virtual Pet that can have a name, can age, can be fed, exercised, and can also die... 
 
 ## Installation
@@ -18,7 +19,7 @@ Copy the following code to initialise your pet!
 
 ```javascript
 const Pet = require('../src/pet');
-const pet = new Pet('insert your pet name here')
+const Pet = new Pet('insert your pet name here')
 ```
 
 ## Play with your Virtual Pet! 
