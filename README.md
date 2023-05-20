@@ -11,7 +11,7 @@ Create a fork and clone the repo.
 
 Run npm install to download dependencies. 
 
-## Create with your own Virtual Pet!
+## Create your own Virtual Pet!
 
 Open node REPL in your terminal. 
 
