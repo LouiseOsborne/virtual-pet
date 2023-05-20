@@ -106,6 +106,7 @@ describe('checkUp', () => {
 
         expect(pet.checkUp()).toBe('I am hungry AND I need a walk');
     });
+    
     it('checks if pet is hungry or needs exercise, but it is fine so returns feeling great', () => {
         const pet = new Pet('Fido');
 

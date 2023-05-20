@@ -3,6 +3,7 @@ const MINIMUM_FITNESS = 3;
 const MAXIMUM_FITNESS = 10;
 const MINIMUM_HUNGER = 0;
 const MAXIMUM_HUNGER = 10;
+const MAX_ACCEPTABLE_HUNGER = 5;
 
 
 function Pet(name) {
@@ -10,12 +11,14 @@ function Pet(name) {
     this.age = 0;
     this.hunger = MINIMUM_HUNGER;
     this.fitness = MAXIMUM_FITNESS;
-}
+};
+
 Pet.prototype.growUp = function() {
     this.age += 1;
     this.hunger += 5;
     this.fitness -= 3 ;
 };
+
 Pet.prototype.walk = function() {
     if ((this.fitness + 4) <= MAXIMUM_FITNESS) {
         this.fitness += 4;
@@ -23,6 +26,7 @@ Pet.prototype.walk = function() {
         this.fitness = MAXIMUM_FITNESS;
     };
 };
+
 Pet.prototype.feed = function() {
     if ((this.hunger - 3) <= MINIMUM_HUNGER) {
         this.hunger = MINIMUM_HUNGER;
@@ -30,14 +34,15 @@ Pet.prototype.feed = function() {
         this.hunger -= 3;
     };
 };
+
 Pet.prototype.checkUp = function() {
-    if((this.fitness <= MINIMUM_FITNESS)&&(this.hunger >= 5)){
+    if((this.fitness <= MINIMUM_FITNESS)&&(this.hunger >= MAX_ACCEPTABLE_HUNGER)){
         return 'I am hungry AND I need a walk';
     }
     else if(this.fitness <= MINIMUM_FITNESS){
         return 'I need a walk';
     }
-    else if((this.hunger >= 5)){
+    else if((this.hunger >= MAX_ACCEPTABLE_HUNGER)){
         return 'I am hungry';
     } else {
         return 'I feel great!';
