@@ -53,9 +53,9 @@ describe('growUp', () => {
     });
 
     
-  });
+});
 
-  describe('walk', () => {
+describe('walk', () => {
     it('increases the fitness by 4', () => {
         const pet = new Pet('Fido');
 
@@ -65,9 +65,9 @@ describe('growUp', () => {
         expect(pet.fitness).toEqual(10);
     });
         
-  });
+});
 
-  describe('feed', () => {
+describe('feed', () => {
     it('decreases the hunger level by 3', () => {
         const pet = new Pet('Fido');
 
@@ -76,5 +76,45 @@ describe('growUp', () => {
 
         expect(pet.hunger).toEqual(0);
     });
-  });
+});
+
+describe('checkUp', () => {
+    it('checks if fitness is 3 or less and if so returns need to walk', () => {
+        const pet = new Pet('Fido');
+
+        pet.fitness = 2;
+        pet.checkUp();
+
+        expect(pet.checkUp()).toBe('I need a walk');
+    });
+
+    it('checks if hunger is 5 or more and if so returns as hungry', () => {
+        const pet = new Pet('Fido');
+
+        pet.hunger = 5;
+        pet.checkUp();
+
+        expect(pet.checkUp()).toBe('I am hungry');
+    });
+
+    it('checks pet hunger is 5 or more and if pet fitness is 3 or less, if so returns as hungry and need to walk', () => {
+        const pet = new Pet('Fido');
+
+        pet.hunger = 5;
+        pet.fitness = 3;
+        pet.checkUp();
+
+        expect(pet.checkUp()).toBe('I am hungry AND I need a walk');
+    });
+    it('checks if pet is hungry or needs exercise, but it is fine so returns feeling great', () => {
+        const pet = new Pet('Fido');
+
+        pet.hunger = 3;
+        pet.fitness = 10;
+        pet.checkUp();
+        
+        expect(pet.checkUp()).toBe('I feel great!');
+    });
+
+});
 
