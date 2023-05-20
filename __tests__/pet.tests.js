@@ -76,6 +76,14 @@ describe('feed', () => {
 
         expect(pet.hunger).toEqual(0);
     });
+    
+    it('throws an error if the pet is not alive', () => {
+        const pet = new Pet('Fido');
+  
+        pet.age = 30;
+  
+        expect(() => pet.feed()).toThrow('Your pet is no longer alive :(');
+    });
 });
 
 describe('checkUp', () => {
@@ -106,7 +114,7 @@ describe('checkUp', () => {
 
         expect(pet.checkUp()).toBe('I am hungry AND I need a walk');
     });
-    
+
     it('checks if pet is hungry or needs exercise, but it is fine so returns feeling great', () => {
         const pet = new Pet('Fido');
 
@@ -116,6 +124,5 @@ describe('checkUp', () => {
         
         expect(pet.checkUp()).toBe('I feel great!');
     });
-
 });
 
